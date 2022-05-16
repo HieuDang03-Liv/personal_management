@@ -1,7 +1,7 @@
-import mongoose from 'mongoose'
+import mongoose, { Model, Schema } from 'mongoose'
 import { UserInterface } from './user.entity'
 
-const userSchema = new mongoose.Schema<UserInterface>({
+const userSchema: Schema = new Schema<UserInterface>({
   email: {
     type: String,
     required: true,
@@ -17,11 +17,11 @@ const userSchema = new mongoose.Schema<UserInterface>({
   },
   dateOfBirth: {
     type: Date,
-    required: true,
   },
   gender: String,
   job: String,
   isMarried: Boolean,
 })
 
-module.exports = mongoose.model('User', userSchema)
+const userModel: Model<UserInterface> = mongoose.model('User', userSchema)
+export default userModel

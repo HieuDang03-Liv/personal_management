@@ -1,0 +1,5 @@
+export const ERROR_MESSAGE = {
+  COMMON_ERR: 'Error occurs when handling.',
+  NO_USERNAME: 'No email found.',
+  INCORRECT_PASSWORD: 'Incorrect password, please try again.',
+}
