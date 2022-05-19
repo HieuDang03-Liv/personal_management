@@ -2,12 +2,11 @@ import express, { Express, Response, Request, json } from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 dotenv.config()
-import userRouter from './components/user'
-
 const mongoDbURL = process.env.MONGODB_CONNECT_URL
 mongoose.connect(mongoDbURL!, () => {
   console.log('Connected to DB...')
 })
+import userRouter from './components/user'
 
 const app: Express = express()
 app.use(json())

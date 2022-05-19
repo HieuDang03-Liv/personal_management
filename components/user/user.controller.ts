@@ -43,3 +43,18 @@ export const logInUser = async (req: Request, res: Response) => {
     res.status(400).json({ message: ERROR_MESSAGE.COMMON_ERR })
   }
 }
+
+export const editUser = async (req: Request, res: Response) => {
+  try {
+    const { userId } = req.params
+    const info = req.body
+    const user = await userModel.findById({ userId })
+    await user?.update(info)
+    await user?.save()
+    res.status(200).json({
+      message: `User ${user?.email} updated`,
+    })
+  } catch (err) {
+    res.status(400).json({ message: ERROR_MESSAGE.COMMON_ERR })
+  }
+}
