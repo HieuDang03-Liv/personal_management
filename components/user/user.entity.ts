@@ -8,4 +8,5 @@ export interface UserInterface {
   gender?: Gender
   job?: string
   isMarried?: boolean
+  refreshToken?: string
 }

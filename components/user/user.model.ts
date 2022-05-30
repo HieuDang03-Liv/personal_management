@@ -21,6 +21,7 @@ const userSchema: Schema = new Schema<UserInterface>({
   gender: String,
   job: String,
   isMarried: Boolean,
+  refreshToken: String,
 })
 
 const userModel: Model<UserInterface> = mongoose.model('User', userSchema)

@@ -1,2 +1,1 @@
-import userRouter from './user.route'
-export default userRouter
+export * from './user.route'

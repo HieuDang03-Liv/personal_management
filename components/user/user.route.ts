@@ -1,9 +1,10 @@
-import { registerUser, logInUser } from './user.controller'
+import { registerUser, logInUser, deleteTokens, editUser } from './user.controller'
+import authenticateToken from '../../middlewares/authenticateToken'
 import { Router } from 'express'
 
-const userRouter = Router()
+export const userRouter = Router()
 
 userRouter.post('/register', registerUser)
 userRouter.post('/login', logInUser)
-
-export default userRouter
+userRouter.patch('/edit', [<any>authenticateToken], <any>editUser)
+userRouter.delete('/logout', deleteTokens)
